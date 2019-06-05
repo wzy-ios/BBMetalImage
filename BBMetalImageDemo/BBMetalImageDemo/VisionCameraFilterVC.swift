@@ -172,6 +172,10 @@ class VisionCameraFilterVC: UIViewController {
             overserverConfig()
         }
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
 extension VisionCameraFilterVC: BBMetalCameraPhotoDelegate {
     func camera(_ camera: BBMetalCamera, didOutput texture: MTLTexture) {
