@@ -35,7 +35,11 @@ class MainMenuVC: UIViewController {
             if let self = self { self.navigationController?.pushViewController(VideoFilterVC2(), animated: true) }
         }
         let visionFilter = { [weak self] in
-            if let self = self { self.navigationController?.pushViewController(VisionCameraFilterVC(), animated: true) }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let self = self { self.navigationController?.pushViewController(
+                storyboard.instantiateViewController(withIdentifier: "VisionCameraFilterVC"),
+                animated: true
+                ) }
         }
         list = [("Static image filter", staticImageFilter),
                 ("Camera filter", cameraFilter),
