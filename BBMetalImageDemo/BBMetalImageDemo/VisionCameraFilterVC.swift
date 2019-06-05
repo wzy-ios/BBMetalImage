@@ -17,11 +17,13 @@ class VisionCameraFilterVC: UIViewController {
     private var metalView: BBMetalView!
     private var metalPartView: BBMetalView!
     
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var regionalView: UIView!
 
     internal let motion = MotionObservable()
 
+    @IBOutlet weak var resolution: UILabel!
     @IBOutlet weak var gyroX: UILabel!
     @IBOutlet weak var gyroY: UILabel!
     @IBOutlet weak var gyroZ: UILabel!
@@ -51,7 +53,71 @@ class VisionCameraFilterVC: UIViewController {
 //        photoButton.addTarget(self, action: #selector(clickPhotoButton(_:)), for: .touchUpInside)
 //        view.addSubview(photoButton)
         
-        camera = BBMetalCamera(sessionPreset: .hd1920x1080)
+//        camera = BBMetalCamera(sessionPreset: .hd1920x1080)
+        var resolution = AVCaptureSession.Preset.cif352x288
+        self.resolution.text = "cif352x288"
+
+        switch UIDevice.modelName {
+        case "iPhone 5s":
+            resolution = .hd1280x720
+            self.resolution.text = "hd1280x720"
+            break
+        case "iPhone SE":
+            resolution = .hd1280x720
+            self.resolution.text = "hd1280x720"
+            break
+        case "iPhone 6":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 6 Plus":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 6s":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 6s Plus":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 7":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 7 Plus":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 8":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone 8 Plus":
+            resolution = .hd1920x1080
+            self.resolution.text = "hd1920x1080"
+            break;
+        case "iPhone X":
+            resolution = .hd4K3840x2160
+            self.resolution.text = "hd4K3840x2160"
+            break
+        case "iPhone XR":
+            resolution = .hd4K3840x2160
+            self.resolution.text = "hd4K3840x2160"
+            break
+        case "iPhone XS":
+            resolution = .hd4K3840x2160
+            self.resolution.text = "hd4K3840x2160"
+            break
+        case "iPhone XS Max":
+            resolution = .hd4K3840x2160
+            self.resolution.text = "hd4K3840x2160"
+            break
+        default:
+            break
+        }
+        camera = BBMetalCamera(sessionPreset: resolution)
         camera.canTakePhoto = true
         camera.photoDelegate = self
         camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
@@ -65,18 +131,24 @@ class VisionCameraFilterVC: UIViewController {
         super.viewDidAppear(animated)
         camera.start()
         
+        overserverConfig()
+    }
+    
+    func overserverConfig() -> Void {
+        
         motion.addGyroObserver(observer: {(x: Double, y: Double, z: Double) -> Void in
-//            let summary = Int(abs(x) + abs(y) + abs(z))
-//            print("Gyro: \(summary)")
-            self.gyroX.text = "\(x)"
-            self.gyroY.text = "\(y)"
-            self.gyroZ.text = "\(z)"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.gyroX.text = "\(x)"
+                self.gyroY.text = "\(y)"
+                self.gyroZ.text = "\(z)"
+            }
         })
         motion.addAccelerometerObserver(observer: {(x: Double, y: Double, z: Double) -> Void in
-//            let summary = Int(abs(x) + abs(y) + abs(z))
-            self.acceX.text = "\(x)"
-            self.acceY.text = "\(y)"
-            self.acceZ.text = "\(z)"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.acceX.text = "\(x)"
+                self.acceY.text = "\(y)"
+                self.acceZ.text = "\(z)"
+            }
         })
     }
     
@@ -91,6 +163,15 @@ class VisionCameraFilterVC: UIViewController {
         camera.takePhoto()
     }
     
+    @IBAction func showDetailPressed(_ sender: Any) {
+        self.detailsView.isHidden = !(sender as! UISwitch).isOn
+        
+        if(self.detailsView.isHidden){
+            motion.clearObservers()
+        }else{
+            overserverConfig()
+        }
+    }
 }
 extension VisionCameraFilterVC: BBMetalCameraPhotoDelegate {
     func camera(_ camera: BBMetalCamera, didOutput texture: MTLTexture) {

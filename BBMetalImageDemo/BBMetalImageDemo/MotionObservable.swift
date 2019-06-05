@@ -9,12 +9,16 @@
 import Foundation
 import CoreMotion
 
-let Fps60 = 0.016
+let Fps60 = 0.0166
+let Fps24 = 0.0416
+let Fps15 = 0.0667
+let Fps10 = 0.1000
+let Fps2 = 0.5
 
 class MotionObservable {
     
     let motionManager: CMMotionManager
-    let updateInterval: Double = Fps60
+    let updateInterval: Double = Fps2
     
     var gyroObservers = [(Double, Double, Double) -> Void]()
     var accelerometerObservers = [(Double, Double, Double) -> Void]()
