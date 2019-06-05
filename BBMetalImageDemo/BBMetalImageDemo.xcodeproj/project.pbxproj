@@ -28,6 +28,7 @@
 		4AFC464F2253CDDC009D37A1 /* StaticImageFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC464E2253CDDC009D37A1 /* StaticImageFilterVC.swift */; };
 		4AFC46512253D1A6009D37A1 /* multicolour_flowers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC46502253D1A6009D37A1 /* multicolour_flowers.jpg */; };
 		4AFD9C3A225EA1190000C839 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD9C39225EA1190000C839 /* FilterType.swift */; };
+		D6D0068822A74CC70071BE04 /* VisionCameraFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		4AFC464E2253CDDC009D37A1 /* StaticImageFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageFilterVC.swift; sourceTree = "<group>"; };
 		4AFC46502253D1A6009D37A1 /* multicolour_flowers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = multicolour_flowers.jpg; sourceTree = "<group>"; };
 		4AFD9C39225EA1190000C839 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
+		D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCameraFilterVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				4A084D8C225D9EE30019FB57 /* CameraFilterMenuVC.swift */,
 				4A00949E225C53C50089941C /* CameraFilterVC.swift */,
 				4A3CAE3E228A060900252B70 /* CameraPhotoFilterVC.swift */,
+				D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */,
 				4A665CFC22721CAA00DFDF4C /* VideoFilterVC.swift */,
 				4A633D672281F33C00138B2A /* VideoFilterVC2.swift */,
 				4A9BCB65227A03E000E02C6F /* VideoPlayerVC.swift */,
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AFD9C3A225EA1190000C839 /* FilterType.swift in Sources */,
+				D6D0068822A74CC70071BE04 /* VisionCameraFilterVC.swift in Sources */,
 				4A084D8D225D9EE30019FB57 /* CameraFilterMenuVC.swift in Sources */,
 				4AFC464D2253CA08009D37A1 /* StaticImageFilterMenuVC.swift in Sources */,
 				4A633D682281F33C00138B2A /* VideoFilterVC2.swift in Sources */,
@@ -360,13 +364,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LJHCTN42A;
+				DEVELOPMENT_TEAM = DWFGUE78S2;
 				INFOPLIST_FILE = BBMetalImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.BBMetalImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.plus.viision.wzy.app-39i230";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -380,13 +384,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9LJHCTN42A;
+				DEVELOPMENT_TEAM = DWFGUE78S2;
 				INFOPLIST_FILE = BBMetalImageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Kaibo.BBMetalImageDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.plus.viision.wzy.app-39i230";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
