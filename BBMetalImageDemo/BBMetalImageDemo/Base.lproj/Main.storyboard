@@ -85,6 +85,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wSE-n3-WdE">
                                         <rect key="frame" x="325" y="62" width="51" height="32"/>
+                                        <connections>
+                                            <action selector="autoDetectPressed:" destination="wbQ-z7-bcA" eventType="valueChanged" id="Cbd-Ro-YOV"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -271,6 +274,7 @@
                         <outlet property="acceX" destination="5PB-8q-j8T" id="fHz-pU-R90"/>
                         <outlet property="acceY" destination="HLo-GH-ifj" id="njA-jn-Kab"/>
                         <outlet property="acceZ" destination="rHK-Ws-U1m" id="6Bi-UZ-e59"/>
+                        <outlet property="autoDetectSw" destination="wSE-n3-WdE" id="RDR-YY-G8F"/>
                         <outlet property="cameraView" destination="Ltr-3V-zg5" id="NaV-eW-NZ7"/>
                         <outlet property="detailsView" destination="9ag-6b-VWk" id="7EM-gh-ZrJ"/>
                         <outlet property="gyroX" destination="Tc0-zd-HLU" id="YMq-A5-8JK"/>

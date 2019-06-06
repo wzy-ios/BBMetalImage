@@ -17,10 +17,12 @@ class VisionCameraFilterVC: UIViewController {
     private var metalView: BBMetalView!
     private var metalPartView: BBMetalView!
     
+    @IBOutlet weak var autoDetectSw: UISwitch!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var regionalView: UIView!
 
+    internal let captureInterval = 0.1
     internal let motion = MotionObservable()
 
     @IBOutlet weak var resolution: UILabel!
@@ -179,6 +181,12 @@ class VisionCameraFilterVC: UIViewController {
     @objc private func clickPhotoButton(_ button: UIButton) {
         camera.takePhoto()
     }
+
+    @IBAction func autoDetectPressed(_ sender: Any) {
+//        if (sender as! UISwitch).isOn {
+//            camera.takePhoto()
+//        }
+    }
     
     @IBAction func showDetailPressed(_ sender: Any) {
         self.detailsView.isHidden = !(sender as! UISwitch).isOn
@@ -195,7 +203,17 @@ class VisionCameraFilterVC: UIViewController {
         return true
     }
 }
+extension Date {
+    func toMillis() -> Int64! {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}
 extension VisionCameraFilterVC: BBMetalCameraPhotoDelegate {
+    func showTime() -> Void{
+        
+        print(Date().toMillis() as Any)
+        
+    }
     func camera(_ camera: BBMetalCamera, didOutput texture: MTLTexture) {
 //        // In main thread
 //        let filter = BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!)
@@ -207,6 +225,12 @@ extension VisionCameraFilterVC: BBMetalCameraPhotoDelegate {
 //        
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
 //            imageView.removeFromSuperview()
+//        }
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + captureInterval) {
+//            if self.autoDetectSw.isOn{
+//                camera.takePhoto()
+//            }
 //        }
         return
     }
