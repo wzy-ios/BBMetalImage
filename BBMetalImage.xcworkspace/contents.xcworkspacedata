@@ -5,6 +5,6 @@
       location = "group:BBMetalImage/BBMetalImage.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:BBMetalImageDemo/BBMetalImageDemo.xcodeproj">
+      location = "group:/Users/zuyingwo/git/wzy/BBMetalImage/BBMetalImageDemo/DraftCap.xcodeproj">
    </FileRef>
 </Workspace>

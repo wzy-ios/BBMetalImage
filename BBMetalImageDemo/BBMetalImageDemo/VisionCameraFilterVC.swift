@@ -32,13 +32,9 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var acceY: UILabel!
     @IBOutlet weak var acceZ: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .gray
-        
-//        let x: CGFloat = 10
-//        let width: CGFloat = view.bounds.width - 20
+    func config() -> Void {
+        //        let x: CGFloat = 10
+        //        let width: CGFloat = view.bounds.width - 20
         metalView = BBMetalView(frame: cameraView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         cameraView.addSubview(metalView)
@@ -125,6 +121,12 @@ class VisionCameraFilterVC: UIViewController {
         
 //        camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
         camera.add(consumer: metalPartView)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        config()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A4CADBD225317C20058BEB6"
-               BuildableName = "BBMetalImageDemo.app"
-               BlueprintName = "BBMetalImageDemo"
-               ReferencedContainer = "container:BBMetalImageDemo.xcodeproj">
+               BuildableName = "DraftCap.app"
+               BlueprintName = "DraftCap"
+               ReferencedContainer = "container:DraftCap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A4CADBD225317C20058BEB6"
-            BuildableName = "BBMetalImageDemo.app"
-            BlueprintName = "BBMetalImageDemo"
-            ReferencedContainer = "container:BBMetalImageDemo.xcodeproj">
+            BuildableName = "DraftCap.app"
+            BlueprintName = "DraftCap"
+            ReferencedContainer = "container:DraftCap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -50,16 +50,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      enableGPUFrameCaptureMode = "1"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A4CADBD225317C20058BEB6"
-            BuildableName = "BBMetalImageDemo.app"
-            BlueprintName = "BBMetalImageDemo"
-            ReferencedContainer = "container:BBMetalImageDemo.xcodeproj">
+            BuildableName = "DraftCap.app"
+            BlueprintName = "DraftCap"
+            ReferencedContainer = "container:DraftCap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A4CADBD225317C20058BEB6"
-            BuildableName = "BBMetalImageDemo.app"
-            BlueprintName = "BBMetalImageDemo"
-            ReferencedContainer = "container:BBMetalImageDemo.xcodeproj">
+            BuildableName = "DraftCap.app"
+            BlueprintName = "DraftCap"
+            ReferencedContainer = "container:DraftCap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

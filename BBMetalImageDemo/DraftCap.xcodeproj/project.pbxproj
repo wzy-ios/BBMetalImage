@@ -51,7 +51,7 @@
 		4A00949E225C53C50089941C /* CameraFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFilterVC.swift; sourceTree = "<group>"; };
 		4A084D8C225D9EE30019FB57 /* CameraFilterMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFilterMenuVC.swift; sourceTree = "<group>"; };
 		4A3CAE3E228A060900252B70 /* CameraPhotoFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPhotoFilterVC.swift; sourceTree = "<group>"; };
-		4A4CADBE225317C20058BEB6 /* BBMetalImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBMetalImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A4CADBE225317C20058BEB6 /* DraftCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraftCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4CADC1225317C20058BEB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A4CADC3225317C20058BEB6 /* MainMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuVC.swift; sourceTree = "<group>"; };
 		4A4CADC6225317C20058BEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		4A4CADBF225317C20058BEB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A4CADBE225317C20058BEB6 /* BBMetalImageDemo.app */,
+				4A4CADBE225317C20058BEB6 /* DraftCap.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A4CADBD225317C20058BEB6 /* BBMetalImageDemo */ = {
+		4A4CADBD225317C20058BEB6 /* DraftCap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A4CADD0225317C30058BEB6 /* Build configuration list for PBXNativeTarget "BBMetalImageDemo" */;
+			buildConfigurationList = 4A4CADD0225317C30058BEB6 /* Build configuration list for PBXNativeTarget "DraftCap" */;
 			buildPhases = (
 				4A4CADBA225317C20058BEB6 /* Sources */,
 				4A4CADBB225317C20058BEB6 /* Frameworks */,
@@ -150,9 +150,9 @@
 			);
 			dependencies = (
 			);
-			name = BBMetalImageDemo;
+			name = DraftCap;
 			productName = BBMetalImageDemo;
-			productReference = 4A4CADBE225317C20058BEB6 /* BBMetalImageDemo.app */;
+			productReference = 4A4CADBE225317C20058BEB6 /* DraftCap.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A4CADB9225317C20058BEB6 /* Build configuration list for PBXProject "BBMetalImageDemo" */;
+			buildConfigurationList = 4A4CADB9225317C20058BEB6 /* Build configuration list for PBXProject "DraftCap" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A4CADBD225317C20058BEB6 /* BBMetalImageDemo */,
+				4A4CADBD225317C20058BEB6 /* DraftCap */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +409,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A4CADB9225317C20058BEB6 /* Build configuration list for PBXProject "BBMetalImageDemo" */ = {
+		4A4CADB9225317C20058BEB6 /* Build configuration list for PBXProject "DraftCap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A4CADCE225317C30058BEB6 /* Debug */,
@@ -418,7 +418,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A4CADD0225317C30058BEB6 /* Build configuration list for PBXNativeTarget "BBMetalImageDemo" */ = {
+		4A4CADD0225317C30058BEB6 /* Build configuration list for PBXNativeTarget "DraftCap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A4CADD1225317C30058BEB6 /* Debug */,
