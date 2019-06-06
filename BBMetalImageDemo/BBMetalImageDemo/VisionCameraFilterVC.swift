@@ -123,19 +123,34 @@ class VisionCameraFilterVC: UIViewController {
         camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
             .add(consumer: metalView)
         
-        camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
-            .add(consumer: metalPartView)
+//        camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
+        camera.add(consumer: metalPartView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         camera.start()
         
-        overserverConfig()
+        observerConfig()
     }
     
-    func overserverConfig() -> Void {
+    func toggleTorch() -> Void {
+        let avDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
+        if  avDevice!.hasTorch {
+            do{
+                try avDevice!.lockForConfiguration()
+                avDevice!.torchMode = (AVCaptureDevice.TorchMode.off == avDevice?.torchMode)
+                    ? AVCaptureDevice.TorchMode.on : AVCaptureDevice.TorchMode.off
+                avDevice!.unlockForConfiguration()
+            }
+            catch{
+            
+            }
+        }
+    }
+    
+    func observerConfig() -> Void {
         motion.addGyroObserver(observer: {(x: Double, y: Double, z: Double) -> Void in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.gyroX.text = "\(x)"
@@ -169,8 +184,9 @@ class VisionCameraFilterVC: UIViewController {
         if(self.detailsView.isHidden){
             motion.clearObservers()
         }else{
-            overserverConfig()
+            observerConfig()
         }
+        toggleTorch()
     }
     
     override var prefersStatusBarHidden: Bool {
