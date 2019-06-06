@@ -56,17 +56,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
-                                <rect key="frame" x="0.0" y="806" width="414" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lD1-a0-UxJ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImR-fE-jjG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImR-fE-jjG" userLabel="Control Panel">
                                 <rect key="frame" x="10" y="24" width="394" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRn-u0-ZVF">
@@ -118,6 +108,16 @@
                                     <constraint firstItem="hgc-uT-eLT" firstAttribute="height" secondItem="qRn-u0-ZVF" secondAttribute="height" id="hab-hM-FMY"/>
                                     <constraint firstItem="wSE-n3-WdE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hgc-uT-eLT" secondAttribute="trailing" constant="8" symbolic="YES" id="iKb-Se-YUS"/>
                                     <constraint firstAttribute="trailing" secondItem="ScQ-Oa-HVI" secondAttribute="trailing" constant="20" id="p9J-4p-sP2"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
+                                <rect key="frame" x="0.0" y="806" width="414" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lD1-a0-UxJ"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ag-6b-VWk" userLabel="DetailView">
