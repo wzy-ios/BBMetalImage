@@ -52,6 +52,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-3V-zg5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
+                                <rect key="frame" x="0.0" y="806" width="414" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lD1-a0-UxJ"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImR-fE-jjG">
                                 <rect key="frame" x="10" y="24" width="394" height="120"/>
@@ -85,6 +98,9 @@
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="hgc-uT-eLT" firstAttribute="width" secondItem="qRn-u0-ZVF" secondAttribute="width" id="02L-ee-VH5"/>
                                     <constraint firstItem="wSE-n3-WdE" firstAttribute="top" secondItem="ScQ-Oa-HVI" secondAttribute="bottom" constant="9" id="3Ux-7W-T0e"/>
@@ -201,6 +217,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="hE0-Xs-2Tg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1NO-kp-2q1" secondAttribute="trailing" constant="8" symbolic="YES" id="4Pv-cg-xSC"/>
                                     <constraint firstItem="5PB-8q-j8T" firstAttribute="top" secondItem="hE0-Xs-2Tg" secondAttribute="bottom" constant="4" id="6ot-nz-75t"/>
@@ -227,13 +246,6 @@
                                     <constraint firstItem="GSS-1H-Drx" firstAttribute="top" secondItem="9ag-6b-VWk" secondAttribute="top" id="uZ0-he-CfT"/>
                                     <constraint firstItem="TvJ-TR-MUA" firstAttribute="top" secondItem="Mtg-2f-Ecc" secondAttribute="bottom" constant="4" id="wAp-iP-a4T"/>
                                     <constraint firstItem="gId-w7-2EW" firstAttribute="centerX" secondItem="9ag-6b-VWk" secondAttribute="centerX" id="x6P-KD-zWf"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
-                                <rect key="frame" x="0.0" y="806" width="414" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lD1-a0-UxJ"/>
                                 </constraints>
                             </view>
                         </subviews>
