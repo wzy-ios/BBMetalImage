@@ -191,9 +191,9 @@ class VisionCameraFilterVC: UIViewController {
         toggleTorch()
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
 extension VisionCameraFilterVC: BBMetalCameraPhotoDelegate {
     func camera(_ camera: BBMetalCamera, didOutput texture: MTLTexture) {
