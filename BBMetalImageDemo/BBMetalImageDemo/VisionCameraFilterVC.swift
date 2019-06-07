@@ -126,10 +126,21 @@ class VisionCameraFilterVC: UIViewController {
         camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
             .add(consumer: metalView)
         
-//        camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
-        camera.add(consumer: metalPartView)
-        
+        if let filter = self.filter {
+            camera.add(consumer: filter)
+                .add(consumer: metalPartView)
+        }
         autoDetect = false
+    }
+    
+    private var filter : BBMetalBaseFilter? {
+        return BBMetalCropFilter(rect: BBMetalRect(
+            x: 0.0,
+            y: 0.5,
+            width: 1.0,
+            height: Float(regionalView.frame.height / cameraView.frame.height)
+            )
+        )
     }
     
     override func viewDidLoad() {
