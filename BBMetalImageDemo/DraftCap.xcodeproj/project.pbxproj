@@ -68,6 +68,7 @@
 		4AFC46502253D1A6009D37A1 /* multicolour_flowers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = multicolour_flowers.jpg; sourceTree = "<group>"; };
 		4AFD9C39225EA1190000C839 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		D47EEEE35D194C1116B79211 /* Pods_DraftCap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DraftCap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62D768222AA0DB700BF2310 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCameraFilterVC.swift; sourceTree = "<group>"; };
 		D6D0068922A75F260071BE04 /* MotionObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionObservable.swift; sourceTree = "<group>"; };
 		D6D0068B22A78CE70071BE04 /* VisionDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDevice.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 		AD133B0E64009C5A488324CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D62D768222AA0DB700BF2310 /* Metal.framework */,
 				D47EEEE35D194C1116B79211 /* Pods_DraftCap.framework */,
 			);
 			name = Frameworks;

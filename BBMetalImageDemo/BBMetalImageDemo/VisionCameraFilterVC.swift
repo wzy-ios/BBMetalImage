@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Metal
+import MetalKit
 import AVFoundation
 import BBMetalImage
 
@@ -118,6 +120,8 @@ class VisionCameraFilterVC: UIViewController {
         camera = BBMetalCamera(sessionPreset: resolution)
         camera.canTakePhoto = true
         camera.photoDelegate = self
+        camera.willTransmitTexture = transmitTexture
+        
         camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
             .add(consumer: metalView)
         
@@ -129,6 +133,7 @@ class VisionCameraFilterVC: UIViewController {
         super.viewDidLoad()
         
         config()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -177,15 +182,22 @@ class VisionCameraFilterVC: UIViewController {
         
         motion.clearObservers()
     }
-    
+    func transmitTexture(_ texture:MTLTexture) -> Void {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + captureInterval) {
+            if !self.autoDetectSw.isOn{
+                return
+            }
+            // Do your work
+        }
+        return
+    }
     @objc private func clickPhotoButton(_ button: UIButton) {
         camera.takePhoto()
     }
 
     @IBAction func autoDetectPressed(_ sender: Any) {
-//        if (sender as! UISwitch).isOn {
-//            camera.takePhoto()
-//        }
+
     }
     
     @IBAction func showDetailPressed(_ sender: Any) {
