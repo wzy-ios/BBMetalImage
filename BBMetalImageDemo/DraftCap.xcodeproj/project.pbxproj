@@ -118,6 +118,7 @@
 		4A4CADC0225317C20058BEB6 /* BBMetalImageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D614578822AA5EB600A53D5A /* Views */,
 				4A4CADC1225317C20058BEB6 /* AppDelegate.swift */,
 				4AFD9C39225EA1190000C839 /* FilterType.swift */,
 				4A4CADC3225317C20058BEB6 /* MainMenuVC.swift */,
@@ -152,6 +153,13 @@
 				D47EEEE35D194C1116B79211 /* Pods_DraftCap.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D614578822AA5EB600A53D5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

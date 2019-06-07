@@ -24,7 +24,8 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var regionalView: UIView!
-
+    @IBOutlet weak var floatingView: UIView!
+    
     internal let captureInterval = 0.1
     internal let motion = MotionObservable()
 
@@ -36,6 +37,50 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var acceX: UILabel!
     @IBOutlet weak var acceY: UILabel!
     @IBOutlet weak var acceZ: UILabel!
+    
+    private var dragging : Bool!
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let point = touch.location(in: self.view)
+
+        if (self.floatingView.frame.contains(point)) {
+            self.dragging = true
+            
+            self.floatingView.layer.shadowOffset = CGSize(width: 5, height: 5);
+            self.floatingView.layer.shadowOpacity = 0.8; // 影の透明度
+        }else{
+            self.dragging = false
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let point = touch.location(in: self.view)
+        
+        if (!self.dragging) {
+            return
+        }
+        
+        self.floatingView.frame = CGRect(
+            origin: CGPoint(x:0, y:point.y),
+            size: self.floatingView.frame.size
+        )
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.floatingView.layer.shadowOffset = CGSize(width: 0, height: 0);
+        self.floatingView.layer.shadowOpacity = 1.0; // 影の透明度
+        
+        if self.dragging {
+            camera.remove(consumer: camera.consumers.last!)
+            if let filter = self.filter {
+                camera.add(consumer: filter)
+                    .add(consumer: metalPartView)
+            }
+            self.dragging = false;
+        }
+    }
     
     func config() -> Void {
         //        let x: CGFloat = 10
@@ -125,7 +170,7 @@ class VisionCameraFilterVC: UIViewController {
         
         camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
             .add(consumer: metalView)
-        
+
         if let filter = self.filter {
             camera.add(consumer: filter)
                 .add(consumer: metalPartView)
@@ -136,7 +181,7 @@ class VisionCameraFilterVC: UIViewController {
     private var filter : BBMetalBaseFilter? {
         return BBMetalCropFilter(rect: BBMetalRect(
             x: 0.0,
-            y: 0.5,
+            y: Float(self.floatingView.frame.origin.y / cameraView.frame.height),
             width: 1.0,
             height: Float(regionalView.frame.height / cameraView.frame.height)
             )
