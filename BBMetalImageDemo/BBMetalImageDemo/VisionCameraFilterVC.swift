@@ -18,6 +18,7 @@ class VisionCameraFilterVC: UIViewController {
     private var camera: BBMetalCamera!
     private var metalView: BBMetalView!
     private var metalPartView: BBMetalView!
+    private var autoDetect : Bool!
     
     @IBOutlet weak var autoDetectSw: UISwitch!
     @IBOutlet weak var detailsView: UIView!
@@ -127,6 +128,8 @@ class VisionCameraFilterVC: UIViewController {
         
 //        camera.add(consumer: BBMetalLookupFilter(lookupTable: UIImage(named: "test_lookup")!.bb_metalTexture!))
         camera.add(consumer: metalPartView)
+        
+        autoDetect = false
     }
     
     override func viewDidLoad() {
@@ -183,13 +186,11 @@ class VisionCameraFilterVC: UIViewController {
         motion.clearObservers()
     }
     func transmitTexture(_ texture:MTLTexture) -> Void {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + captureInterval) {
-            if !self.autoDetectSw.isOn{
-                return
-            }
-            // Do your work
+        if !self.autoDetect{
+            return
         }
+        // Do your work
+        
         return
     }
     @objc private func clickPhotoButton(_ button: UIButton) {
@@ -197,7 +198,7 @@ class VisionCameraFilterVC: UIViewController {
     }
 
     @IBAction func autoDetectPressed(_ sender: Any) {
-
+        autoDetect = self.autoDetectSw.isOn
     }
     
     @IBAction func showDetailPressed(_ sender: Any) {
