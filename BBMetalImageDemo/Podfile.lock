@@ -1,24 +1,28 @@
 PODS:
   - BBMetalImage (1.0.0)
+  - CropView (0.1.6)
   - OpenCV (4.1.0)
   - TOCropViewController (2.5.0)
 
 DEPENDENCIES:
-  - BBMetalImage
+  - BBMetalImage (= 1.0.0)
+  - CropView
   - OpenCV (= 4.1.0)
-  - TOCropViewController
+  - TOCropViewController (= 2.5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BBMetalImage
+    - CropView
     - OpenCV
     - TOCropViewController
 
 SPEC CHECKSUMS:
   BBMetalImage: 86cc0b70c5d9a8fd3e790a648f525d44b1947712
+  CropView: 2fad8340e54f433fd68a112a27007a4be4f580d0
   OpenCV: 52cd4d72ff29e2be83421477aec5447320b7fb19
   TOCropViewController: d86078d3a57a70c116bf3db7c89c80046a0e5fdf
 
-PODFILE CHECKSUM: 6ec1df56bac8059fe9b5712594bdad4ef956fe23
+PODFILE CHECKSUM: 8572bbac8cdb62b0c42877a3e1eab9f2ee69b361
 
 COCOAPODS: 1.7.1

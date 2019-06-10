@@ -11,6 +11,7 @@ import Metal
 import MetalKit
 import AVFoundation
 import BBMetalImage
+import CropView
 
 //define IS_DEBUG
 
@@ -38,6 +39,8 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var acceY: UILabel!
     @IBOutlet weak var acceZ: UILabel!
     
+    let cropView = SECropView()
+
     private var dragging : Bool!
     private var cameraViewHeight : float_t!
     private var areaViewHeight : float_t!
@@ -64,7 +67,7 @@ class VisionCameraFilterVC: UIViewController {
             return
         }
         
-        if ((Float(point.y) + 1.5*areaViewHeight) < Float(cameraView.frame.height)){
+        if (point.y < regionalView.frame.origin.y){
             self.floatingView.frame = CGRect(
                 origin: CGPoint(x:0, y:point.y),
                 size: self.floatingView.frame.size
@@ -87,6 +90,14 @@ class VisionCameraFilterVC: UIViewController {
     }
     
     func config() -> Void {
+        
+        cropView.configureWithCorners(
+            corners: [CGPoint(x: 0, y: 0),
+                      CGPoint(x: 270, y: 0),
+                      CGPoint(x: 280, y: 60),
+                      CGPoint(x: 0, y: 60)],
+            on: floatingView as! UIImageView)
+
         metalView = BBMetalView(frame: cameraView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         cameraView.addSubview(metalView)

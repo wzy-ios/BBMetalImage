@@ -6,6 +6,7 @@ target 'DraftCap' do
   use_frameworks!
 
   # Pods for DraftCap
+  pod 'CropView'
   pod 'OpenCV', '4.1.0'
   pod 'BBMetalImage', '1.0.0'
   pod 'TOCropViewController', '2.5.0'
