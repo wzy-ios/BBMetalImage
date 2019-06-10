@@ -124,16 +124,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ScQ-Oa-HVI" secondAttribute="trailing" constant="20" id="p9J-4p-sP2"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
-                                <rect key="frame" x="0.0" y="790" width="414" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="lD1-a0-UxJ"/>
-                                </constraints>
-                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ag-6b-VWk" userLabel="DetailView">
                                 <rect key="frame" x="10" y="124" width="394" height="420"/>
                                 <subviews>
@@ -295,6 +285,47 @@
                                     <constraint firstItem="gId-w7-2EW" firstAttribute="centerX" secondItem="9ag-6b-VWk" secondAttribute="centerX" id="x6P-KD-zWf"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-kW-K7d">
+                                <rect key="frame" x="0.0" y="790" width="414" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEN-lE-h5v">
+                                        <rect key="frame" x="348" y="0.0" width="60" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unlock" translatesAutoresizingMaskIntoConstraints="NO" id="P9d-b1-HWA">
+                                                <rect key="frame" x="6" y="6" width="48" height="48"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeM-4E-BPa">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <connections>
+                                                    <action selector="lockPressed:" destination="wbQ-z7-bcA" eventType="touchUpInside" id="BO0-L9-iWj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="P9d-b1-HWA" firstAttribute="leading" secondItem="FEN-lE-h5v" secondAttribute="leading" constant="6" id="1oL-l2-HGk"/>
+                                            <constraint firstAttribute="height" constant="60" id="7uI-5K-AHS"/>
+                                            <constraint firstAttribute="bottom" secondItem="P9d-b1-HWA" secondAttribute="bottom" constant="6" id="B76-Mg-LAC"/>
+                                            <constraint firstItem="FeM-4E-BPa" firstAttribute="leading" secondItem="FEN-lE-h5v" secondAttribute="leading" id="Ky3-Ip-LsF"/>
+                                            <constraint firstAttribute="width" constant="60" id="QsW-eJ-UEY"/>
+                                            <constraint firstAttribute="bottom" secondItem="FeM-4E-BPa" secondAttribute="bottom" id="VIR-9S-V1M"/>
+                                            <constraint firstItem="FeM-4E-BPa" firstAttribute="top" secondItem="FEN-lE-h5v" secondAttribute="top" id="Y8g-Nn-MWL"/>
+                                            <constraint firstItem="P9d-b1-HWA" firstAttribute="top" secondItem="FEN-lE-h5v" secondAttribute="top" constant="6" id="n58-5M-5v6"/>
+                                            <constraint firstAttribute="trailing" secondItem="FeM-4E-BPa" secondAttribute="trailing" id="pGg-hA-L55"/>
+                                            <constraint firstAttribute="trailing" secondItem="P9d-b1-HWA" secondAttribute="trailing" constant="6" id="poY-CO-0cP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FEN-lE-h5v" secondAttribute="trailing" constant="6" id="LL8-he-kjJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="lD1-a0-UxJ"/>
+                                    <constraint firstItem="FEN-lE-h5v" firstAttribute="centerY" secondItem="8wn-kW-K7d" secondAttribute="centerY" id="zPa-5o-dVj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -325,6 +356,7 @@
                         <outlet property="gyroX" destination="Tc0-zd-HLU" id="YMq-A5-8JK"/>
                         <outlet property="gyroY" destination="Mtg-2f-Ecc" id="Vaz-9S-St7"/>
                         <outlet property="gyroZ" destination="TvJ-TR-MUA" id="AZm-Gq-rUT"/>
+                        <outlet property="lockImageView" destination="P9d-b1-HWA" id="UYg-6m-TM5"/>
                         <outlet property="regionalView" destination="8wn-kW-K7d" id="caX-v3-qSp"/>
                         <outlet property="resolution" destination="GSS-1H-Drx" id="mtQ-Di-UEW"/>
                         <outlet property="testView" destination="Msq-O0-1wK" id="q3W-qo-L8f"/>
@@ -354,6 +386,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Unlock" width="120" height="124"/>
         <image name="iPhone-Gyro" width="689" height="802"/>
     </resources>
 </document>

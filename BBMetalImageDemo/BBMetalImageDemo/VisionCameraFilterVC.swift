@@ -41,9 +41,11 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var acceY: UILabel!
     @IBOutlet weak var acceZ: UILabel!
     
+    @IBOutlet weak var lockImageView: UIImageView!
     let cropView = SECropView()
 
     private var dragging : Bool!
+    private var locked : Bool!
     private var cameraViewHeight : float_t!
     private var areaViewHeight : float_t!
 
@@ -92,6 +94,7 @@ class VisionCameraFilterVC: UIViewController {
     }
     
     func config() -> Void {
+        self.locked = false
         
         floatingView.image = UIImage.colorImage(color: UIColor.clear, size: floatingView.bounds.size)
         cropView.configureWithCorners(
@@ -99,17 +102,18 @@ class VisionCameraFilterVC: UIViewController {
                       CGPoint(x: 270, y: 5),
                       CGPoint(x: 280, y: 60),
                       CGPoint(x: 5, y: 60)],
-//            on: testView)
             on: floatingView)
 
         metalView = BBMetalView(frame: cameraView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         cameraView.addSubview(metalView)
+        cameraView.sendSubviewToBack(metalView)
         cameraViewHeight = Float(cameraView.frame.height)
         
         metalPartView = BBMetalView(frame: regionalView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         regionalView.addSubview(metalPartView)
+        regionalView.sendSubviewToBack(metalPartView)
         areaViewHeight = Float(regionalView.frame.height)
         
         var resolution = AVCaptureSession.Preset.cif352x288
@@ -281,6 +285,14 @@ class VisionCameraFilterVC: UIViewController {
         toggleTorch()
     }
     
+    @IBAction func lockPressed(_ sender: Any) {
+        self.locked = !self.locked
+        if self.locked {
+            lockImageView.image =  UIImage(named: "Lock")
+        }else{
+            lockImageView.image =  UIImage(named: "Unlock")
+        }
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }
