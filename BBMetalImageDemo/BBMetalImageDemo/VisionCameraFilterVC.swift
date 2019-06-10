@@ -21,11 +21,13 @@ class VisionCameraFilterVC: UIViewController {
     private var metalPartView: BBMetalView!
     private var autoDetect : Bool!
     
+    @IBOutlet weak var testView: UIImageView!
+    
     @IBOutlet weak var autoDetectSw: UISwitch!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var regionalView: UIView!
-    @IBOutlet weak var floatingView: UIView!
+    @IBOutlet weak var floatingView: UIImageView!
     
     internal let captureInterval = 0.1
     internal let motion = MotionObservable()
@@ -49,7 +51,7 @@ class VisionCameraFilterVC: UIViewController {
         let touch = touches.first!
         let point = touch.location(in: self.view)
 
-        if (self.floatingView.frame.contains(point)) {
+        if (!self.floatingView.frame.contains(point)) {
             self.dragging = true
             
             self.floatingView.layer.shadowOffset = CGSize(width: 5, height: 5);
@@ -91,12 +93,14 @@ class VisionCameraFilterVC: UIViewController {
     
     func config() -> Void {
         
+        floatingView.image = UIImage.colorImage(color: UIColor.clear, size: floatingView.bounds.size)
         cropView.configureWithCorners(
-            corners: [CGPoint(x: 0, y: 0),
-                      CGPoint(x: 270, y: 0),
+            corners: [CGPoint(x: 5, y:50),
+                      CGPoint(x: 270, y: 5),
                       CGPoint(x: 280, y: 60),
-                      CGPoint(x: 0, y: 60)],
-            on: floatingView as! UIImageView)
+                      CGPoint(x: 5, y: 60)],
+//            on: testView)
+            on: floatingView)
 
         metalView = BBMetalView(frame: cameraView.bounds,
                                 device: BBMetalDevice.sharedDevice)

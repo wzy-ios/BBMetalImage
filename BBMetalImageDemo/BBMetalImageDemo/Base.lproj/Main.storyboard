@@ -327,6 +327,7 @@
                         <outlet property="gyroZ" destination="TvJ-TR-MUA" id="AZm-Gq-rUT"/>
                         <outlet property="regionalView" destination="8wn-kW-K7d" id="caX-v3-qSp"/>
                         <outlet property="resolution" destination="GSS-1H-Drx" id="mtQ-Di-UEW"/>
+                        <outlet property="testView" destination="Msq-O0-1wK" id="q3W-qo-L8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zr8-b4-OGM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -26,6 +26,7 @@
 		4AFC464F2253CDDC009D37A1 /* StaticImageFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC464E2253CDDC009D37A1 /* StaticImageFilterVC.swift */; };
 		4AFC46512253D1A6009D37A1 /* multicolour_flowers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC46502253D1A6009D37A1 /* multicolour_flowers.jpg */; };
 		4AFD9C3A225EA1190000C839 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD9C39225EA1190000C839 /* FilterType.swift */; };
+		D687913822AE3A1700007E04 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D687913722AE3A1700007E04 /* UIImage.swift */; };
 		D6D0068822A74CC70071BE04 /* VisionCameraFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */; };
 		D6D0068A22A75F260071BE04 /* MotionObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0068922A75F260071BE04 /* MotionObservable.swift */; };
 		D6D0068C22A78CE70071BE04 /* VisionDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D0068B22A78CE70071BE04 /* VisionDevice.swift */; };
@@ -69,6 +70,7 @@
 		4AFD9C39225EA1190000C839 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		D47EEEE35D194C1116B79211 /* Pods_DraftCap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DraftCap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62D768222AA0DB700BF2310 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		D687913722AE3A1700007E04 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D6D0068722A74CC70071BE04 /* VisionCameraFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCameraFilterVC.swift; sourceTree = "<group>"; };
 		D6D0068922A75F260071BE04 /* MotionObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionObservable.swift; sourceTree = "<group>"; };
 		D6D0068B22A78CE70071BE04 /* VisionDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDevice.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		D614578822AA5EB600A53D5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D687913722AE3A1700007E04 /* UIImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				4A084D8D225D9EE30019FB57 /* CameraFilterMenuVC.swift in Sources */,
 				4AFC464D2253CA08009D37A1 /* StaticImageFilterMenuVC.swift in Sources */,
 				4A633D682281F33C00138B2A /* VideoFilterVC2.swift in Sources */,
+				D687913822AE3A1700007E04 /* UIImage.swift in Sources */,
 				4A4CADC4225317C20058BEB6 /* MainMenuVC.swift in Sources */,
 				4A665CFD22721CAA00DFDF4C /* VideoFilterVC.swift in Sources */,
 				4AFC464F2253CDDC009D37A1 /* StaticImageFilterVC.swift in Sources */,
