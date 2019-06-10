@@ -53,6 +53,10 @@ class VisionCameraFilterVC: UIViewController {
         let touch = touches.first!
         let point = touch.location(in: self.view)
 
+        if (locked){
+            return
+        }
+        
         if (!self.floatingView.frame.contains(point)) {
             self.dragging = true
             
@@ -95,6 +99,7 @@ class VisionCameraFilterVC: UIViewController {
     
     func config() -> Void {
         self.locked = false
+        self.dragging = false
         
         floatingView.image = UIImage.colorImage(color: UIColor.clear, size: floatingView.bounds.size)
         cropView.configureWithCorners(
@@ -266,6 +271,7 @@ class VisionCameraFilterVC: UIViewController {
         
         return
     }
+    
     @objc private func clickPhotoButton(_ button: UIButton) {
         camera.takePhoto()
     }
@@ -288,10 +294,12 @@ class VisionCameraFilterVC: UIViewController {
     @IBAction func lockPressed(_ sender: Any) {
         self.locked = !self.locked
         if self.locked {
+            print("Crop area : \(cropView.cornerLocations as Any)")
             lockImageView.image =  UIImage(named: "Lock")
         }else{
             lockImageView.image =  UIImage(named: "Unlock")
         }
+        cropView.isUserInteractionEnabled = !locked
     }
     override var prefersStatusBarHidden: Bool {
         return true
