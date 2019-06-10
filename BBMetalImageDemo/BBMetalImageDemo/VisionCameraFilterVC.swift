@@ -39,6 +39,8 @@ class VisionCameraFilterVC: UIViewController {
     @IBOutlet weak var acceZ: UILabel!
     
     private var dragging : Bool!
+    private var cameraViewHeight : float_t!
+    private var areaViewHeight : float_t!
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
@@ -62,10 +64,12 @@ class VisionCameraFilterVC: UIViewController {
             return
         }
         
-        self.floatingView.frame = CGRect(
-            origin: CGPoint(x:0, y:point.y),
-            size: self.floatingView.frame.size
-        )
+        if ((Float(point.y) + 1.5*areaViewHeight) < Float(cameraView.frame.height)){
+            self.floatingView.frame = CGRect(
+                origin: CGPoint(x:0, y:point.y),
+                size: self.floatingView.frame.size
+            )
+        }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -83,23 +87,16 @@ class VisionCameraFilterVC: UIViewController {
     }
     
     func config() -> Void {
-        //        let x: CGFloat = 10
-        //        let width: CGFloat = view.bounds.width - 20
         metalView = BBMetalView(frame: cameraView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         cameraView.addSubview(metalView)
+        cameraViewHeight = Float(cameraView.frame.height)
         
         metalPartView = BBMetalView(frame: regionalView.bounds,
                                 device: BBMetalDevice.sharedDevice)
         regionalView.addSubview(metalPartView)
+        areaViewHeight = Float(regionalView.frame.height)
         
-//        let photoButton = UIButton(frame: CGRect(x: x, y: metalView.frame.maxY + 10, width: width, height: 30))
-//        photoButton.backgroundColor = .blue
-//        photoButton.setTitle("Take photo", for: .normal)
-//        photoButton.addTarget(self, action: #selector(clickPhotoButton(_:)), for: .touchUpInside)
-//        view.addSubview(photoButton)
-        
-//        camera = BBMetalCamera(sessionPreset: .hd1920x1080)
         var resolution = AVCaptureSession.Preset.cif352x288
         self.resolution.text = "cif352x288"
 
@@ -179,11 +176,12 @@ class VisionCameraFilterVC: UIViewController {
     }
     
     private var filter : BBMetalBaseFilter? {
+        
         return BBMetalCropFilter(rect: BBMetalRect(
             x: 0.0,
-            y: Float(self.floatingView.frame.origin.y / cameraView.frame.height),
+            y: Float(floatingView.frame.origin.y) / cameraViewHeight,
             width: 1.0,
-            height: Float(regionalView.frame.height / cameraView.frame.height)
+            height: Float(regionalView.frame.height) / cameraViewHeight
             )
         )
     }
